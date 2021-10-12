@@ -1,0 +1,54 @@
+
+BODY {
+    /* questa lista da la disponibilità di usare Lucida se non disponibile Trebuchet... e così via 
+    fino ad arrivare alla tipologia, in questo casa sans-serif 
+    .woff e .ttf sono i più usati*/
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+    font-size: 20px;
+    
+}
+/* CSS3: caricamento di un nostro font
+ @font-face {
+    font-family: 'il mio Font';
+    src: url("mioFont.ttf");
+} */
+
+H1 {
+    /* "rem" aumenta o diminuisce in proporzione una misura standard nel body */
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: capitalize;
+    font-style: italic;
+    text-decoration: overline underline;
+
+}
+
+P {
+    line-height: 1;
+    font-size: 0.8em;
+    letter-spacing: 0.0em;
+}
+P SPAN { color: chocolate; }
+
+P.boxed {
+    background-color: cornsilk;
+    /*
+        Quattro modi diversi per definirli 
+        padding: X          => All
+        padding: X Y        => Top/Bottom & L/R
+        padding: X Y Z      => Top & Right=Left & Bottom
+        padding: X Y Z U    => Top & Right & Bottom & Left
+
+        margin: come padding
+    */
+    padding: 10px 10px 20px;
+    margin: 50px 0 40px 10px;
+
+    /* border: spessore & <solid | dashed | dotted> & colore */
+    border-left: 3px solid salmon;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+

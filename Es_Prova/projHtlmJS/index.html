@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, dicta!</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, dicta!</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, dicta!</h1>
+    <div>
+        <p id="primo">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, aliquid.
+    </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, inventore.
+        </p>
+    </div>
+<button type = "button">Cliccami</button>
+<script>
+    console.log("Ciao");
+    console.warn("Warning");
+    console.error("Errore");
+
+    let p = document.getElementById("primo");
+    console.log(p);
+    p.style.color = "#00FF00";
+    p.innerHTML = `
+        <b>Questo</b> è stato scritto in JS`;
+    p.addEventListener('mouseenter', (e) => {
+        p.style.background = "#000000";
+    });
+    p.addEventListener('mouseleave', (e) => {
+        p.style.background = "transparent";
+    });
+
+    let h1s = document.getElementsByTagName("h1");      // recupera una collection tramiti Tag, Class, ect
+    for(let h1 of h1s) {
+        console.log(h1);
+        h1.innerHTML = Math.random() * 10;
+    }
+
+
+    
+    for (let h1 of h1s) {
+            console.log(h1);
+            h1.innerHTML = Math.random() * 1000;
+        }
+
+        let classes = document.getElementsByClassName("container");
+
+        for (let el of classes) {
+            console.log(el);
+        }
+
+        let selector = document.querySelectorAll("DIV.container");
+
+        selector.item(0).innerHTML = "Ho avuto accesso a questo tag tramite il selettore DIV.container";
+
+        let button = document.querySelector("BUTTON");
+
+        button.addEventListener('click', (e) => {
+            let img = document.querySelector("IMG");
+            img.src = "panorama.jpg";
+        });
+        let img = document.querySelector("IMG");
+        img.addEventListener('click', clickImg);
+
+        //...
+
+        // img.removeEventListener('click', clickImg);
+
+
+
+</script>
+<script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head> <!-- contiene solo metainformazioni con diversi dati -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Titoli 1</h1>
+        <h2>Titoli 2</h2>
+        <h3>Titoli 3</h3>
+        <h4>Titoli 4</h4>
+        <h5>Titoli 5</h5>
+        <!-- Linea orizzontale -->
+        <hr>
+        Testo prima del paragrafo
+        <h4>Demo del tag &lt;P&gt; &euro;</h4>     <!-- esempi di caratteri speciali -->
+        <p>Questo è un paragrafo</p>
+        Testo dopo il paragrafo
+        
+        <hr>
+        Testo <strong>prima</strong> del DIV
+        <h4>Demo del tag &lt;DIV&gt; &euro;</h4>   <!-- la loro diversità sta nella formattazione (vedi cosa stampa)-->
+        <div>Questo è un DIV</div>
+        Testo <em>dopo</em> il <u>DIV</u>
+
+        <hr>
+        Testo prima del SPAN
+        <h4>Demo del tag &lt;SPAN&gt; &euro;</h4>    
+        <span>Questo è un SPAN</span>
+        Testo dopo il DIV
+        <br>
+        <p>x<sup>2</sup></p>
+        <p>&omega;<sub>2</sub></p>
+
+        <br><br>
+
+        <h1>Liste ordinate</h1>
+            <ol type="A"> <!-- posso specificare il tipo di enumerazione -->
+                <li>Pane</li>
+                <li>Pizza</li>
+                <li>Pasta</li>
+            </ol>
+        <hr>
+            <!-- Per js recuperare elementi dalla lista, ragiona puramente a livello strutturale
+                cioè recuperare il terzo elemento dal terzo in lista -->
+        <h1>Liste non ordinate</h1>
+            <ul type="circle">
+                <li>Primi</li>
+                    <ul type="disc">            <!-- E' possibile annidare infinite liste tra loro -->
+                        <li>Amatriciana</li>
+                        <li>Lasagna</li>
+                    </ul>
+                <li>Secondi</li>
+                <li>Contorni</li>
+
+    </ul>
+        
+        <br><br>
+        <hr> 
+        <h2>Tabella semplice 3x2</h2>
+        <table cellspacing="0" cellpadding="10" border="1" width="300">
+            <tr>
+                <td width="90">Uno</td>     <!-- questo implica che lo stesso verrà applicato al primo td restanti -->
+                <td>Due</td>
+            </tr>
+            <tr>
+                <td>Tre</td>
+                <td>Quattro</td>
+            </tr>
+            <tr>
+                <td colspan="2">Cinque</td>
+            </tr>
+        </table>
+
+        <br><br>
+          
+
+         <table cellspacing="0" cellpadding="10" border="1" width="300">
+            <tr>
+                <td width="90" rowspan="3">Uno</td>     <!-- questo implica che lo stesso verrà applicato al primo td restanti -->
+                <td>Due</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>Tre</td>
+                <td>Quattro</td>
+            </tr>
+            <tr>
+                <td>Cinque</td>
+            </tr>
+        </table>
+        <br><br>
+        <hr> 
+        <h2>Tabella con intestazione</h2>
+        <table cellspacing="0" cellpadding="10" border="1" width="300">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Età</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Alessandro</th>
+                    <th>28 anni</th>
+                </tr>
+            </tbody>
+
+
+    </body>
+
+</html>

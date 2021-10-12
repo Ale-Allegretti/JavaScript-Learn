@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Exercise</title>
+</head>
+<body>
+    <!--
+        Esercizio:
+        Gestire una lista di todo dinamica.
+
+        Al click sul bottone #addTodo, effettuare l'aggiunta del task all'interno di #lista
+        Per eliminare l'elemento dalla lista, utilizzare il bottone #deleteTodo utilizzando l'indice scritto su #delete
+
+        ATTENZIONE: L'indice della ol è 1-based. Se scrivo 1, voglio eliminare il primo elemento.
+
+        Consiglio:
+        Per recuperare il valore di una input di testo, utilizzare la proprietà value.
+        Per effettuare la cancellazione di un figlio in un tag html,
+        utilizzare children per accedere ai figli e remove() per eliminare l'elemento dalla pagina
+    -->
+    <label for="delete">Aggiungi un task</label>
+    <input type="text" id="todo" placeholder="Inserire un task"> <button type="button" id="addTodo">Aggiungi</button>
+    <br>
+    <br>
+    <label for="delete">Elimina l'elemento i-esimo</label>
+    <input type="text" id="delete" placeholder="Elimina l'elemento i-esimo"> <button type="button" id="deleteTodo">Elimina</button>
+    <br>
+
+    <h4>Lista ToDo</h4>
+    <hr>
+    <ol id="lista">
+
+    </ol>
+    <script src="./script.js"></script>
+</body>
+</html>

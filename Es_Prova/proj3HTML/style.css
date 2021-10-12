@@ -1,0 +1,162 @@
+
+BODY {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    /* necessario per includere nelle dimensioni tutte le modifiche */
+    box-sizing: border-box;
+}
+
+#pagina {
+    width: 1000px;
+    /* height: 700px; */
+    /* per centrare gli elementi in pagina */
+    margin: 0 auto;
+    border: 1px solid #06C;
+}
+/* Figlio diretto di pagina */
+#pagina > HEADER {
+    background-color: #06C;
+    color: white;
+    /* height: 200px; */
+}
+
+#pagina > HEADER H1 { 
+    margin: 0;
+    padding: 70px 40px;
+}
+
+/* Regola generale per gli UL LI dentro le NAV */
+NAV UL {
+    margin: 0;
+    padding: 0;
+}
+NAV UL LI {
+    /* Rimuovo il pallino e affianco i <li> */
+    list-style-type: none;
+    display: inline-block;
+}
+NAV UL LI A {
+    text-decoration: none;
+    display: block;
+    transition: 0.2s all ease-in-out;
+}
+/* Regolo specifiche per le mainNAV */
+#mainNav {
+    background-color: #555;
+}
+#mainNav UL LI A{
+    color: white;
+    padding: 10px 24px;
+}
+#mainNav UL LI A:hover{
+    background-color: rgba(255, 255, 255, 0.1);
+    /* font-size: 20px; */
+}
+
+#main > ASIDE {
+    /* la grandezza totale sarà di 300 + 20 + 20 */
+    background-color:beige;
+    width: 30%;
+    float: left;
+    padding: 20px;
+    
+}
+#main > ASIDE H2 {
+    margin-top: 0;
+    font-weight: 500;
+    color: #06C;
+}
+#main > ASIDE P {
+    line-height: 1.5;
+    color: #333;
+    font-size: 0.9rem;
+}
+#content {
+    width: 70%;
+    float: left;
+}
+
+/* Quando si usa float bisogna utilizzare sempre un CLEAR 
+   questo perché stabilisce che nessun elemento può sovrapporsi a 
+   questo elemento -> senza di questo il main risulterà alto 0px */
+.fix {clear: both;}
+
+ARTICLE { padding: 20px; }
+ARTICLE H3 {
+    margin-top: 0;
+}
+ARTICLE LI A {
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+ARTICLE LI A:hover {
+    background: #ddd;
+}
+ARTICLE P {
+    line-height: 1.4;
+    font-size: 0.9;
+}
+ARTICLE FOOTER{
+    background-color: #f8f8f8;
+    color: #555;
+    font-size: 0.8em;
+    border-top: 1px solid #ddd;
+    padding: 4px;
+}
+
+FOOTER {
+    background-color: #06C;
+    color: #fff;
+    padding: 20px 10px;
+}
+
+
+/* SMARTPHONE */
+@media (max-width: 600px) {
+    BODY {
+        margin: 0;
+    }
+    #pagina {
+        width: 100%;
+        border: 0;
+        margin: 0;
+    }
+    #pagina > HEADER {
+        text-align: center;
+    }
+    #pagina > HEADER H1 {
+        font-size: 1.3rem;
+        padding: 30px 0;
+    }
+    #mainNav UL LI {display: block;}
+    #mainNav UL LI A {text-align: center;}
+    #main ASIDE{float: none; width: 100%;}
+    #main #content{float: none; width: 100%;}
+    ARTICLE UL LI A {
+        font-size: 0.7em;
+        padding: 4px;
+        border: 0;
+    }
+}
+
+/* TABLET >= 600 & <= 768*/
+@media (min-width: 601px) and (max-width: 768px){
+    BODY {
+        margin: 0;
+    }
+    #pagina {
+        width: 100%;
+        border: 0;
+        margin: 0;
+    }
+}
+
+/* DESKTOP >= 1024*/
+@media (min-width: 1023px) {
+    
+}

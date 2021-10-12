@@ -1,25 +1,29 @@
 
-/* let i = 0;
-let y = "*";
-while (i < 4) {
-    console.log(y);
-    y = y.replace("*", "**");
-    i++;
-} */
+console.log(process.argv);
+let baseAltezza = Number(process.argv[2] || 4);
 
 
-let aster = process.argv;
+if(isNaN(baseAltezza)) {
+    console.log("Inserire un numero");
+} else {
+    for (let i = baseAltezza; i >= 1; i--) {
+        let asterisco = "";
+        for(let j = 1; j <= i; j++) {
+            asterisco += "*";
+        }
+        console.log(asterisco);
+    }
 
-let input = Number(aster[2]);
-let y = "*";
-for (let i = 0; i < input; i++) {
-    console.log(y);
-    y = y.replace("*", "**");
-}
-console.log("");
-
-y = y.replace("**", "*");
-for (let i = input; i > 0 ; i--) {
-    console.log(y);
-    y = y.replace("**", "*");
+    let i = 1;
+    console.log("Risoluzione con il while");
+    while (i <= baseAltezza) {
+        let asterisco = "";
+        let j = 1;
+        while(j <= i) {
+            asterisco += "*";
+            j++;
+        }
+        console.log(asterisco);
+        i++;
+    }
 }

@@ -1,0 +1,50 @@
+
+#splash {
+    margin-top: 10px;
+    /* background-color: red; */
+    background-image: url('./download.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+#splash::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%);
+
+}
+#splash H1 { 
+    padding: 140px 0;
+    color: #fff;
+    position: relative;
+    text-shadow: 3px 3px 16px rgb(0, 0, 0);
+    font-size: 2.8rem;
+}
+A.nav-link {color: steelblue;}
+A.nav-link:hover{color: turquoise;}
+
+
+/* CARD LIBRI */
+.card.book H6 { font-size: 0.8em; color: #888;}
+.card.book P {margin-bottom: 4px;}
+.price {
+    color: rgb(255, 119, 0);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.card.book .promo{
+    position: absolute;
+    top: 30px;
+    left: -5px;
+    font-size: 1rem;
+    padding: 0.4em 1em;
+    box-shadow: 5px 6px 10px -6px #000000;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

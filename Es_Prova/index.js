@@ -96,6 +96,8 @@ if(oggetto3) {
 
 
 
+
+
 // FOR EACH 
 
 let array = [11, 21, 35, 48];
@@ -109,6 +111,8 @@ for (let index in array) {
 for (let key in oggetto3) {
     console.log("Proprietà", key, "==> ", oggetto3[key]);
 }
+
+
 
 
 
@@ -131,3 +135,242 @@ switch (stringa) {      // senza il break eseguirebbe comunque tutti i casi dopo
         break;
     }
 }
+
+
+
+
+
+
+// STRING REGEX
+
+let ciaoMondoSub = ciaoMondo.substring(2, 6);
+console.log("Substring(2, 6)", ciaoMondoSub, `Lunghezza ${ciaoMondoSub.length}`);
+
+let ciaoMondoSubError = ciaoMondo.substring(2, 1000);
+console.log("Substring(2, 1000)", ciaoMondoSubError, `Lunghezza ${ciaoMondoSubError.length}`);
+
+let ciaoMondoSubstr = ciaoMondo.substr(2, 4);
+console.log("Substr(2, 4)", ciaoMondoSubstr, `Lunghezza ${ciaoMondoSubstr.length}`);
+
+let ciaoMondoSubstrError = ciaoMondo.substr(2, 1000);
+console.log("Substr(2, 1000)", ciaoMondoSubstrError, `Lunghezza ${ciaoMondoSubstrError.length}`);
+
+let replace = ciaoMondo.replace("Ciao", "Buongiorno");
+console.log(replace);
+let regex = /(ciao)+/img;
+let regexObj = new RegExp("(ciao)+", "img");
+
+regex.test(stringa);
+
+console.log(stringa.replace(regex, "Buongiorno"));
+
+let replaceAll = stringa.replaceAll("Ciao", "Buonasera");
+
+
+console.log("ReplaceAll", replaceAll);
+
+let messaggio = "Questo messaggio verrà spezzettato in tante stringhe";
+
+let parole = messaggio.split(" ");
+
+console.log("Split:", parole, parole.length);
+
+let lettere = messaggio.split("");
+
+console.log("Split:", lettere, lettere.length);
+
+
+
+
+
+
+let ora = new Date();       // l'oggetto Date può essere inizializzato in diversi modi
+console.log(ora);
+
+// vedi schema metodi sulle date da slide
+
+
+
+
+
+
+
+// ARRAY e vari metodi
+
+
+let esArray = [];
+
+esArray.push("A", "B", "C", "D");
+console.log(esArray);
+
+let eliminato = esArray.pop();
+console.log("Ho eliminato " + eliminato);
+console.log(esArray);
+
+esArray.unshift("Z");
+console.log(esArray);
+
+eliminato = esArray.shift();
+console.log("Ho eliminato " + eliminato);
+console.log(esArray);
+
+esArray = esArray.concat([1, 2], ["F"]);
+console.log(esArray);
+
+let nuovoArray = esArray.slice(0, 2);
+console.log(nuovoArray);
+
+esArray.splice(2, 2);
+console.log(esArray);
+
+console.log(esArray.join("-----"));
+
+esArray.reverse();
+console.log(esArray);
+
+
+
+
+
+
+let numeri = [1, 4, 77, 2, -2];
+
+let pari = numeri.filter((element, index, _self) => {       // _self corrisponde all'array stesso
+    console.log(index, element);                            // che può essere utilizzato nella funzione stessa
+    return element % 2 == 0;
+});
+
+console.log(numeri);
+console.log(pari);
+
+
+let numAlQuadrato = numeri.map(element => { 
+    return element * element;
+});
+
+console.log(numAlQuadrato);
+
+
+
+let oggettiNum = numeri.map(element => { 
+    return {
+        numero: element,
+        pari: element % 2 == 0
+    };
+});
+
+console.log(oggettiNum);
+
+numeri.forEach(element => {
+    console.log(element);
+})
+
+
+
+let trovato = numeri.find(element => {
+    return element > 50;
+})
+console.log("Trovato >50 ->", trovato);
+
+let indTrovato = numeri.findIndex(element => {
+    return element > 50;
+})
+if (indTrovato >= 0 ) {
+    console.log("Numero >50 ->", numeri[indTrovato]);
+}
+else {
+    console.log("Nessun numero trovato");
+}
+
+
+
+let sommaArray = numeri.reduce((acc, element) => {      // lo 0 finale indica dove partire con la somma (indice)
+    return acc + element;                               // in questo caso è un indice ma potrebbe essere qualsiasi elemento
+}, 0);
+
+console.log(sommaArray);
+
+
+
+let maggioriZero = numeri.every(element => {
+    return element > 0;
+})
+console.log("Numeri maggiori di 0? ", maggioriZero);
+
+let almenoUnoMinoreZero = numeri.some(element => {
+    return element < 0;
+});
+console.log("Almeno un numero minore di 0? ", almenoUnoMinoreZero);
+
+
+let filtratoMap = numeri
+    .map(element => {
+        return element - 10;
+    })
+    .filter(element => {
+        return element > 10;
+    });
+console.log(filtratoMap);
+
+
+numeri.sort();      // modificando l'array sorgente
+console.log(numeri);
+
+numeri.sort((a, b) => {     // modifico il tipo di ordinamento
+    return b - a;           
+});
+console.log(numeri);
+
+
+
+
+// GESTIONE ERRORI
+
+let oggettoNull;
+
+try {
+    console.log(oggettoNull);
+} catch (error) {
+    console.error(error);
+}
+console.log("Fine esecuzione");
+
+
+
+// DESTRUTTURAZIONE 
+
+let [first, second] = [1, 2, 3, 4, 5, 6];
+
+console.log({
+    first,              // possibile anche senza specificare come in second
+    second: second,
+    eta: 3
+});
+
+
+let cane = {
+    nome: "Fido",
+    razza: "Pastore tedesco"
+};
+
+let animale = {
+    eta: 10,
+    citta: "Roma"
+};
+
+let caneAnimale = {         // CONCANTENZAZIONE DI OGGETTI O ARRAY
+    ...cane,
+    ...animale,              // in questo caso eta viene sovrascritto!
+    sesso: "Maschio",
+    stampaNome: function() {
+        console.log(this.nome);
+    }
+};
+
+console.log(caneAnimale);
+console.log(caneAnimale.stampaNome());
+
+let arrayNumeri = [33, 64];
+let newArray = [...arrayNumeri, 40, 22];
+
+console.log(newArray);

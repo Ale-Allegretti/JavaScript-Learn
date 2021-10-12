@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style link="reset.css"></style>
+</head>
+<body>
+    <h2>i FORM di html</h2>
+    <!-- metodi HTTP => GEST, POST, PUT, DELETE, OPTIONS, PATCH, ect.  importanti per Angular -->
+    <!-- non è mai vero che post è più sicuro di get -> vengono usati in diversi contesti 
+         la get passa dei parametri in url che può essere più utile 
+         una password la si passa in post -->
+    <form action="https://google.it/" method="get">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome...">
+        <!-- il name viene generalmente gestito da Angular o JS stesso, specialmente in post come chiamata verso backend -->
+        <br><br>
+        <input type="password" name="pwd">
+        <br><br>
+        <input type="radio" name="sesso" value="M" checked> M
+        <input type="radio" name="sesso" value="F"> F
+        <br><br>
+        <!-- questo passa un valore di "on" se selezionato -->
+        <input type="checkbox" name="hobby_1" value="pesca" checked > Pesca
+        <input type="checkbox" name="hobby_2" value="nuoto" > Nuoto
+        <br><br>
+        <select name="citta" id="">
+            <option value="">Scegli...</option>
+            <option value="RM">Roma</option>
+            <option value="MI">Milano</option>
+            <optgroup><!--      --></optgroup>
+        </select>
+        <br><br>
+        <input type="file">
+        <br><br>
+        <!-- larghezza e lunghezza si imposta meglio da CSS -->
+        <textarea name="note" id="" cols="30" rows="10">    
+        </textarea>
+        <br><br>
+        <button type="submit">Submit del form</button>
+        <button type="reset">Reset del form</button>
+        <button type="button">Cliccami</button>
+        <br><br>
+        <!-- i seguenti meglio non utilizzarli perchè non compatibili ovunque -->
+        <input type="number" name="numero" placeholder="Inserisci il tuo numero...">
+        <br><br>
+        <input type="date" name="data" placeholder="Inserisci la data...">
+        <br><br>
+        <input type="color" name="colore" placeholder="Inserisci il colore...">
+        <br><br>
+
+    </form>
+
+
+
+</body>
+</html>
