@@ -1,0 +1,29 @@
+BUTTON#add-task {
+  margin-right: 20px;
+}
+
+DIV.form-check {
+  margin-bottom: 20px;
+}
+
+BUTTON.btn-danger {
+  margin: 20px 0;
+}
+
+/* priorities colors */
+.low {
+  color: green !important;
+}
+
+.medium {
+  color: rgb(255, 217, 0) !important;
+}
+
+.high {
+  color: red !important;
+}
+
+/* Hide elements */
+.hide {
+  display: none;
+}
