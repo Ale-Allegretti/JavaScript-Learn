@@ -290,6 +290,9 @@ let sommaArray = numeri.reduce((acc, element) => {      // lo 0 finale indica do
 
 console.log(sommaArray);
 
+// da input posso ricevere un numero variabile di elementi (motivo dei ...)
+const somme = (...input) => input.reduce((tot, el) => tot + el, 0);         // funzione generica
+
 
 
 let maggioriZero = numeri.every(element => {
