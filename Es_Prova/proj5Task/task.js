@@ -1,4 +1,5 @@
 // var theModal = new bootstrap.Modal(document.getElementById("newTaskModal"));
+let taskList = [];
 
 function openModal(idSelector) {
     bootstrap.Modal.getOrCreateInstance(document.getElementById(idSelector)).show();
@@ -20,7 +21,7 @@ function Task(titolo, descrizione, scadenza, urgente, completato) {
     this.completato = completato;
 }
 
-let taskList = [];
+
 showTaskList("todo");
 
 document.querySelector("#newTaskModal .modal-footer .btn-primary").addEventListener("click", function(){
@@ -84,7 +85,15 @@ function showTaskList(type){
     )
 
     if(taskList.length === 0){
-        document.querySelector("#" + type + ".col-12").innerHTML = '<div class="alert alert-warning">Nessun task presente</div>';
+        if(type == 'todo') {
+            document.querySelector("#" + type).innerHTML = `
+            <div class="alert alert-warning col-12">Nessun task presente</div> `;
+        }
+        else {
+            document.querySelector("#todo").innerHTML = '';
+        }
+        document.querySelector("#done").innerHTML = `
+            <div class="alert alert-warning col-12">Nessun task completato presente</div> `;
     }
     else {
         let tagList = "";
@@ -96,7 +105,7 @@ function showTaskList(type){
                     </div>
                     <span class="h4">${t.titolo}</span>
                     <p class="mb-2 text-muted">${t.descrizione}</p>
-                    `
+                    `;
                 if(!t.completato) {  
                     tagList += `  
                     <ul class="nav">
@@ -113,14 +122,28 @@ function showTaskList(type){
                 </div>`
                 }
         });
-        document.querySelector("#" + type + " .col-12").innerHTML = tagList;
+        // controllo se tra quelli inseriti non ci sono completati
+        let completatiVuoto = true;
+        taskList.forEach(function(task) {
+            if(task.completato == true) {
+                completatiVuoto = false;
+            }
+        })
+        if(completatiVuoto) {
+            document.querySelector("#done").innerHTML = `
+            <div class="alert alert-warning col-12">Nessun task completato presente</div> `;
+        }
+        // aggiunto i relativi task ai relativi tag type
+        document.querySelector("#" + type).innerHTML = tagList;
     }
 }
 
 function completaTask(i) {
+    console.log(taskList);
     taskList[i].completato = true;
+    console.log(taskList);
     saveToLocalStorage();
-    showTaskList();
+    showTaskList("todo");
 }
 
 function modificaTask(i) {
